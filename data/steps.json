@@ -1,0 +1,32 @@
+[
+  {
+    "heading": "Contact",
+    "body": "What would you like to create? What kind of help do you need? Let’s talk about it! Go to the „GET A QUOTE” section and answer a few questions.",
+    "icon": "Svg/contact.svg"
+  },
+  {
+    "heading": "Workshops",
+    "body": "Let’s start with your needs. The next step is to identify goals and assumptions. Our role is to find the best solutions to reach them.",
+    "icon": "Svg/workshop.svg"
+  },
+  {
+    "heading": "Plan",
+    "body": "Step three: workflow. We clearly define the principles of cooperation: scope of work, deadlines, budget and form of communication.",
+    "icon": "Svg/plan.svg"
+  },
+  {
+    "heading": "Design",
+    "body": "An extremely important stage of the process. Perception of your solution may influence its success. Trust us and let us present a design proposal for your application or website.",
+    "icon": "Svg/design.svg"
+  },
+  {
+    "heading": "Development",
+    "body": "We use the SCRUM / Agile methodology, which means that we divide development into iterations. Every 2-3 weeks we provide you with another piece of your project.",
+    "icon": "Svg/development.svg"
+  },
+  {
+    "heading": "Delivery",
+    "body": "When your application is ready, we add it to Google Play / App Store and walk you through all technical and legal aspects of public distribution.",
+    "icon": "Svg/contact.svg"
+  }
+]

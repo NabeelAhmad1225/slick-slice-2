@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "name": "Mike Langdon",
+    "quote": "I had a great experience working with this company. Their attention to detail and customer service is exceptional!",
+    "avatar": "https://source.unsplash.com/50x50/?portrait?2"
+  },
+  {
+    "id": 2,
+    "name": "Raymond Hill",
+    "quote": "Developers went above and beyond to meet our requirements with quality work, if you are looking for a good dev team look no further highly recommended and will surely use services again.",
+    "avatar": "https://source.unsplash.com/50x50/?portrait?3"
+  },
+  {
+    "id": 3,
+    "name": "Rosie Brown",
+    "quote": "The team seems to have an exceptional understanding of Web Development and UI / UX Design",
+    "avatar": "https://source.unsplash.com/50x50/?portrait?4"
+  },
+  {
+    "id": 4,
+    "name": "Anna Ollson",
+    "quote": "I absolutely love the design and the quality of the work. Working with Devex team has been great. They are quick and communicate well. I’m already working on my next Gig with him. Really love the work awesome."
+  },
+  {
+    "id": 5,
+    "name": "Alex Kim",
+    "quote": "As a tech enthusiast, I was thrilled to work with this company. Their innovative products and services are top-notch!",
+    "avatar": "https://source.unsplash.com/50x50/?portrait?6"
+  }
+]

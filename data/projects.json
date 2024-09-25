@@ -1,0 +1,44 @@
+[
+	{
+		"id": 1,
+		"heading": "Fitrops",
+		"tags": ["WEB", "ANDROID", "iOS"],
+		"logo": "/images/projects/fitrops.png",
+		"description": "Fitrops is an app for tracking, managing, and staying on top of your fitness goals. It provides access to a library of on-demand workout videos and allows you to log your workouts and track your progress."
+	},
+	{
+		"id": 2,
+		"heading": "Growth Student",
+		"tags": ["WEB", "ANDROID", "iOS", "DESKTOP"],
+		"logo": "/images/projects/growthStudent.png",
+		"description": "Growth Student helps students organize their classes, assignments, and exams so they can stay on top of their studies. Students create study groups with students from other universities and they can use built-in charts to visualize their study time."
+	},
+	{
+		"id": 3,
+		"heading": "YGlot",
+		"tags": ["ANDROID", "IOS"],
+		"logo": "/images/projects/yglot.png",
+		"description": "Immersive-first language app that leverages raw, locally sourced media. We dove deep into the world of language learning and geeked out on the latest research and cognitive science."
+	},
+	{
+		"id": 4,
+		"heading": "Service Hub",
+		"tags": ["ANDROID", "iOS"],
+		"logo": "/images/projects/img-4.jpg",
+		"description": "Service Hub is a service provider application that provides services to individual customers. It is designed to help businesses connect with their customers and provide them with the services they need"
+	},
+	{
+		"id": 5,
+		"heading": "Giraffe",
+		"tags": ["WEB", "ANDROID", "iOS"],
+		"logo": "/images/projects/Giraffe_Marker 3.png",
+		"description": "Giraffe is a service provider application that provides services to individual customers. It is designed to help businesses connect with their customers and provide them with the services they need"
+	},
+	{
+		"id": 6,
+		"heading": "Circulate",
+		"tags": ["ANDROID", "iOS"],
+		"logo": "/images/projects/circulate.png",
+		"description": "Circulate is a business directory app especially catered towards the POC communities of United States."
+	}
+]

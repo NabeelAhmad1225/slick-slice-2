@@ -1,0 +1,27 @@
+[
+	{
+		"id": "mobile-apps",
+		"label": "Mobile apps",
+		"src": "/svgs/SvgServiceMobileApp.svg"
+	},
+	{
+		"id": "word-press-websites",
+		"label": "WordPress websites",
+		"src": "/svgs/SvgServiceWordpress.svg"
+	},
+	{
+		"id": "web-apps",
+		"label": "Web Apps",
+		"src": "/svgs/SvgServiceWebApp.svg"
+	},
+	{
+		"id": "ui-ux",
+		"label": "UX/UI Design",
+		"src": "/svgs/SvgServiceUiUx.svg"
+	},
+	{
+		"id": "api-solutions",
+		"label": "API solutions",
+		"src": "/svgs/SvgServiceApi.svg"
+	}
+]

@@ -1,0 +1,43 @@
+/* ------------ Backgrounds ------------ */
+.whiteBackground {
+  @apply bg-transparent text-body;
+}
+.secondaryBackground {
+  @apply bg-transparent text-body;
+}
+.primaryBackground {
+  @apply bg-transparent text-white;
+}
+
+/* when scrolling */
+html:not([data-scroll="0"]) .scrollModeBackground {
+  @apply shadow-md shadow-gray-200 !bg-white !text-body;
+}
+
+/* ------------ Logo ------------ */
+.logo {
+  @apply w-32 md:w-48 h-auto object-contain;
+}
+
+/* for all other backgrounds, only show light version of logo ... */
+.logoDarkMode {
+  @apply hidden;
+}
+.logoLightMode {
+  @apply block;
+}
+
+/* ... EXCEPT for primary background, switch btw dark and light versions of logo */
+html[data-scroll="0"] .primaryBackground .logoDarkMode {
+  @apply block;
+}
+html:not([data-scroll="0"]) .primaryBackground .logoDarkMode {
+  @apply hidden;
+}
+
+html[data-scroll="0"] .primaryBackground .logoLightMode {
+  @apply hidden;
+}
+html:not([data-scroll="0"]) .primaryBackground .logoLightMode {
+  @apply block;
+}
