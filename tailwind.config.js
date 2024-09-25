@@ -13,11 +13,19 @@ module.exports = {
   ],
   theme: {
     gradientColorStops: (theme) => ({
-      // 912ac1 4f32c5
+      // // 912ac1 4f32c5
       // "hero-gradient": ["#bf47f8 25%", "#6d4cf3 45%", "#021a70 75%"],
+      "hero-gradient": ["#9600FF 25%", "#AEBAF8 75%"]
 
-      "hero-gradient": ["#912ac1 25%", "#4f32c5 45%", "#021a70 75%"],
-      // "hero-gradient": ["#bf47f8 25%", "#ff4d00 45%", "#cc3300 75%"]
+    
+
+
+
+
+      // "hero-gradient": ["#912ac1 25%", "#4f32c5 45%", "#021a70 75%"],
+      // "hero-gradient": ["#ffcc80 25%", "#ffab40 50%", "#ff9100 75%"]
+
+
 
     }),
     screens: {
