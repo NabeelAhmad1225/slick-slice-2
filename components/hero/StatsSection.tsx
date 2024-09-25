@@ -33,12 +33,12 @@ export default function StatsSection() {
                 initial="hidden"
                 whileInView="visible"
               >
-                <p className="text-white text-responsive-6xl font-accent mb-3">
+                {/* <p className="text-white text-responsive-6xl font-accent mb-3">
                   {stat.value}+
                 </p>
                 <h3 className="text-white text-responsive-base md:text-responsive-lg !font-body !font-light">
                   {stat.label}
-                </h3>
+                </h3> */}
               </motion.article>
             );
           })}
