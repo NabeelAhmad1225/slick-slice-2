@@ -19,7 +19,7 @@ export default function StatsSection() {
 
   return (
     <>
-      <div className="wrapper bg-primary h-fit relative pt-container pb-container">
+      <div className="wrapper bg-primary h-fit relative pt-container pb-container ">
         <BgStats />
 
         <section className="container-fluid flex justify-center lg:justify-end w-full gap-container md:gap-10 lg:gap-container flex-wrap">

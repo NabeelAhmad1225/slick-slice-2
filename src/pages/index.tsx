@@ -39,23 +39,23 @@ export default function Home() {
         <ServiceSection2 />
       </motion.div>
 
-      <StatsSection />
+      {/* <StatsSection /> */}
 
-      <motion.div
+      {/* <motion.div
         initial={initial}
         whileInView={whileInView}
         viewport={{ once: true, amount: "some" }}
       >
         <StepsSection />
-      </motion.div>
+      </motion.div> */}
 
-      <motion.div
+      {/* <motion.div
         initial={initial}
         whileInView={whileInView}
         viewport={{ once: true, amount: "some" }}
       >
         <TestimonialSection />
-      </motion.div>
+      </motion.div> */}
     </>
   );
 }

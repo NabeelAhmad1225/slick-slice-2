@@ -7,7 +7,7 @@ export default function Hero() {
 
   useEffect(() => {
     const typed = new Typed(typeTarget.current, {
-      strings: ["IT services?", "Cleaning Services?", "Plumbing Services?"  ],
+      strings: ["IT services?", "Cleaning Services?", "Plumbing Services?"],
       typeSpeed: 100,
       backSpeed: 50,
       loop: true,
@@ -25,12 +25,10 @@ export default function Hero() {
             <h1 className="text-responsive-5xl font-bold text-heading font-heading text-white">
               Looking for
               <br />
-
               <strong className="h-[50px] text-5xl" ref={typeTarget}></strong>
             </h1>
             <p className="mt-2 lg:mt-3 text-responsive-lg text-white">
-              No need for searching. We're ready to develop your product. Trust
-              experienced software house.
+              No need for searching. We're ready to assist you
             </p>
 
             <button className="btn btn-lg btn-secondary  border-accent-2 mt-6 lg:mt-9">

@@ -14,7 +14,7 @@ import BgFooter from "./svgs/BgFooter";
 export default function Footer() {
   return (
     <>
-      <div className="container -mb-[8.5rem] -mt-[8.5rem]  relative z-10 overflow-hidden style-card">
+      <div className="container -mb-[8.5rem] -mt-[8.5rem]  relative z-10 overflow-hidden style-card mt-10">
         <BgFooter />
 
         <article className="relative z-10 px-10 py-10 overflow-hidden text-center style-card">
@@ -22,7 +22,7 @@ export default function Footer() {
             Alright! <strong className="!text-white">Let's do this.</strong>
           </h2>
           <p className="text-white ">
-            Schedule a consultation with Devex-IT to transform your business
+          Schedule a consultation with Slick Slice to transform your business
             with customized software solutions.
           </p>
           <Link href="/get-a-quote">
