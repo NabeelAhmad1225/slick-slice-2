@@ -22,8 +22,7 @@ export default function Footer() {
             Alright! <strong className="!text-white">Let's do this.</strong>
           </h2>
           <p className="text-white ">
-          Schedule a consultation with Slick Slice to transform your business
-            with customized software solutions.
+          Schedule a consultation with Slick Slice 
           </p>
           <Link href="/get-a-quote">
             <button className="btn btn-lg btn-primary bg-primary mt-card">
