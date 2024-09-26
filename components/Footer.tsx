@@ -22,7 +22,7 @@ export default function Footer() {
             Alright! <strong className="!text-white">Let's do this.</strong>
           </h2>
           <p className="text-white ">
-          Schedule a consultation with Slick Slice 
+            Schedule a consultation with Slick Slice
           </p>
           <Link href="/get-a-quote">
             <button className="btn btn-lg btn-primary bg-primary mt-card">
@@ -40,10 +40,9 @@ export default function Footer() {
               alt="devex IT company logo"
               className="object-contain w-60"
             /> */}
-              <strong className="py-1.5 px-3 transition-all duration-200 ease-in-out  uppercase  tracking-widest text-white text-responsive-4xl">
-            Slick Slice
-          </strong>
-
+            <strong className="py-1.5 px-3 transition-all duration-200 ease-in-out  uppercase  tracking-widest text-white text-responsive-4xl">
+              Slick Slice
+            </strong>
           </article>
 
           <article className="col-span-3 md:col-span-1">
@@ -114,8 +113,7 @@ export default function Footer() {
           <hr className="w-full col-span-3 opacity-20 md:col-span-3 midXl:col-span-4" />
 
           <p className="col-span-3 text-center text-white midXl:text-left md:col-span-3 midXl:col-span-2">
-            © {new Date().getFullYear()} Slick Slice Enterprise. All rights
-            reserved
+            © {new Date().getFullYear()} Slick Slice. All rights reserved
           </p>
 
           <article className="flex flex-wrap justify-center col-span-3 midXl:justify-end gap-card md:col-span-3 midXl:col-span-2">

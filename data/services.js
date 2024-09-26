@@ -40,25 +40,25 @@ import mobileApp from "../public/icons/mobile-app.json";
 
 export const services = [
   {
-    id: "mobile-apps",
+    id: "it-services",
     label: "IT Services",
     json: mobileApp,
     svg: "Svg/mobile-app.svg",
   },
   {
-    id: "e-commerce-websites",
+    id: "cleaning-services",
     label: "Cleaning Services ",
     json: wordpress,
     svg: "Svg/e-commerce.svg",
   },
   {
-    id: "web-apps",
+    id: "plumbing-services",
     label: "Plumbing Services",
     json: webApp,
     svg: "Svg/web-app.svg",
   },
   {
-    id: "ui-ux",
+    id: "electrical-services",
     label: "Electrical Services",
     json: uiUx,
     svg: "Svg/ui-ux.svg",

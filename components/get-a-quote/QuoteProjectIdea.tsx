@@ -4,7 +4,6 @@ import QuoteStepActions from "./QuoteStepActions";
 import { QuoteStepContentForm } from "./QuoteStepContent";
 
 export interface ProjectIdea {
-  idea: string;
   description: string;
 }
 
@@ -41,18 +40,15 @@ export default function QuoteProjectIdea({
 
     const form: HTMLFormElement = event.target;
 
-    if (form.reportValidity() && !!idea) {
+    if (form.reportValidity()) {
       onSubmit({
-        idea: idea,
         description: description,
       });
       onNext(step + 1);
       setError("");
     } else {
       let msg = "";
-      if (!!!idea) {
-        msg = "Please select type of project.";
-      }
+
       if (!!!description) {
         msg = msg + " Please enter description of your project.";
       }
@@ -66,12 +62,12 @@ export default function QuoteProjectIdea({
       <form noValidate={true} onSubmit={onclickSubmitForm}>
         <header className="mb-box">
           <h2 className=" text-responsive-2xl">
-            What Project Idea do you have in mind?
+            What Service Idea do you have in mind?
           </h2>
           <p className="text-error text-responsive-base">{error}</p>
         </header>
 
-        <label className="pl-0.5 text-responsive-base font-body text-subheading block mb-2">
+        {/* <label className="pl-0.5 text-responsive-base font-body text-subheading block mb-2">
           Project Type
         </label>
         <section className="grid grid-auto-col-200 gap-card mb-card">
@@ -95,10 +91,10 @@ export default function QuoteProjectIdea({
               </article>
             );
           })}
-        </section>
+        </section> */}
         <Textarea
           name="description"
-          label="Project Description"
+          label="Services Description"
           value={description}
           required
           onChange={(event: any) => setDescription(event.target.value)}

@@ -6,9 +6,6 @@ import QuoteClientInformation, {
 import QuoteProjectIdea, {
   ProjectIdea,
 } from "../../../components/get-a-quote/QuoteProjectIdea";
-import QuoteProjectScope, {
-  ProjectScope,
-} from "../../../components/get-a-quote/QuoteProjectScope";
 import QuoteStep from "../../../components/get-a-quote/QuoteStep";
 import QuoteServiceType, {
   ProjectServices,
@@ -16,7 +13,8 @@ import QuoteServiceType, {
 import QuoteStepContent from "../../../components/get-a-quote/QuoteStepContent";
 
 export default function GetAQuote() {
-  const steps = ["Services", "Idea", "Scope", "Information"];
+  // Update steps array to exclude "Scope"
+  const steps = ["Services", "Idea", "Information"];
 
   const [currentStep, setCurrentStep] = useState(1);
   const [progress, setProgress] = useState(15);
@@ -36,12 +34,56 @@ export default function GetAQuote() {
 
   const [services, setServices] = useState<null | ProjectServices>(null);
   const [idea, setIdea] = useState<null | ProjectIdea>(null);
-  const [scope, setScope] = useState<null | ProjectScope>(null);
   const [clientInfo, setClientInfo] = useState<null | ClientInformation>(null);
 
   useEffect(() => {
-    // console.log({ ...services, ...idea, ...scope, ...clientInfo });
-  }, [services, idea, scope, clientInfo]);
+    console.log({ ...services, ...idea, ...clientInfo });
+  }, [services, idea, clientInfo]);
+
+  async function handleSubmit() {
+    if (!clientInfo || !idea || !services) {
+      console.log("Missing information. Please complete all fields.");
+      return;
+    }
+
+    console.log("Submitting the following data:", {
+      full_name: clientInfo.full_name,
+      email: clientInfo.email,
+      phone: clientInfo.phone,
+      country: clientInfo.country,
+      nda: clientInfo.nda,
+      description: idea.description,
+      services: services.services.join(", "),
+    });
+
+    const data = {
+      full_name: clientInfo.full_name || "",
+      email: clientInfo.email || "",
+      phone: clientInfo.phone || "",
+      country: clientInfo.country || "",
+      nda: clientInfo.nda || false,
+      description: idea.description || "",
+      services: services.services.join(", ") || "",
+    };
+
+    try {
+      const res = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        console.log("Email sent successfully");
+      } else {
+        console.error("Failed to send email");
+      }
+    } catch (error) {
+      console.error("Error sending email", error);
+    }
+  }
 
   return (
     <>
@@ -74,7 +116,7 @@ export default function GetAQuote() {
       <div className="wrapper w-screen overflow-hidden">
         <section className="screen container w-screen h-fit overflow-x-hidden ">
           <div
-            className="slider w-full flex transition-all duration-500 ease-in-out   "
+            className="slider w-full flex transition-all duration-500 ease-in-out"
             style={translateX}
           >
             <QuoteStepContent isActive={currentStep == 1}>
@@ -97,21 +139,12 @@ export default function GetAQuote() {
             </QuoteStepContent>
 
             <QuoteStepContent isActive={currentStep == 3}>
-              <QuoteProjectScope
-                step={3}
-                currentStep={currentStep}
-                onSubmit={setScope}
-                onNext={updateProgress}
-                onBack={updateProgress}
-              />
-            </QuoteStepContent>
-
-            <QuoteStepContent isActive={currentStep == 4}>
               <QuoteClientInformation
-                step={4}
+                step={3}
                 currentStep={currentStep}
                 onSubmit={setClientInfo}
                 onNext={(event) => {}}
+                sendEmail={handleSubmit}
                 onBack={updateProgress}
               />
             </QuoteStepContent>

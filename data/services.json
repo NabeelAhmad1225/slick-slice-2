@@ -1,27 +1,22 @@
 [
 	{
-		"id": "mobile-apps",
-		"label": "Mobile apps",
+		"id": "it-services",
+		"label": "IT Services",
 		"src": "/svgs/SvgServiceMobileApp.svg"
 	},
 	{
-		"id": "word-press-websites",
-		"label": "WordPress websites",
+		"id": "cleaning-services",
+		"label": "Cleaning Services ",
 		"src": "/svgs/SvgServiceWordpress.svg"
 	},
 	{
-		"id": "web-apps",
-		"label": "Web Apps",
+		"id": "plumbing-services",
+		"label": "Plumbing Services",
 		"src": "/svgs/SvgServiceWebApp.svg"
 	},
 	{
-		"id": "ui-ux",
-		"label": "UX/UI Design",
+		"id": "electrical-services",
+		"label": "Electrical Services",
 		"src": "/svgs/SvgServiceUiUx.svg"
-	},
-	{
-		"id": "api-solutions",
-		"label": "API solutions",
-		"src": "/svgs/SvgServiceApi.svg"
 	}
 ]

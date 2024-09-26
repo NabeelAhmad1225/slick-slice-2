@@ -79,12 +79,12 @@ export default function QuoteServiceType({
                   htmlFor={service.id}
                   className="grid place-items-center rounded-md border-2 border-[#adb2c055] card peer-[.hidden]:peer-checked:bg-[#49c2fa1c] peer-[.hidden]:peer-checked:border-accent-2 cursor-pointer transition-all duration-500 ease-in-out hover:scale-105"
                 >
-                  <img
+                  {/* <img
                     src={service.svg}
                     alt={service.label}
                     className="w-20 h-auto "
-                  />
-                  <span className="font-body text-body text-responsive-base mt-box capitalize">
+                  /> */}
+                  <span className="font-body text-body text-responsive-base  capitalize">
                     {service.label}
                   </span>
                 </label>
