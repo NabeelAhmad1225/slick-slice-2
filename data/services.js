@@ -4,28 +4,62 @@ import wordpress from "../public/icons/wordpress.json";
 // import apiSolutions from "../public/icons/api-solutions.json";
 import mobileApp from "../public/icons/mobile-app.json";
 
+// export const services = [
+//   {
+//     id: "mobile-apps",
+//     label: "Mobile Apps",
+//     json: mobileApp,
+//     svg: "Svg/mobile-app.svg",
+//   },
+//   {
+//     id: "e-commerce-websites",
+//     label: "E-Commerce websites",
+//     json: wordpress,
+//     svg: "Svg/e-commerce.svg",
+//   },
+//   {
+//     id: "web-apps",
+//     label: "Web Apps",
+//     json: webApp,
+//     svg: "Svg/web-app.svg",
+//   },
+//   {
+//     id: "ui-ux",
+//     label: "UX/UI Design",
+//     json: uiUx,
+//     svg: "Svg/ui-ux.svg",
+//   },
+//   // {
+//   //   id: "api-solutions",
+//   //   label: "API Solutions",
+//   //   json: apiSolutions,
+//   //   // svg: "Svg/api-solutions.svg",
+//   // },
+// ];
+
+
 export const services = [
   {
     id: "mobile-apps",
-    label: "Mobile Apps",
+    label: "IT Services",
     json: mobileApp,
     svg: "Svg/mobile-app.svg",
   },
   {
     id: "e-commerce-websites",
-    label: "E-Commerce websites",
+    label: "Cleaning Services ",
     json: wordpress,
     svg: "Svg/e-commerce.svg",
   },
   {
     id: "web-apps",
-    label: "Web Apps",
+    label: "Plumbing Services",
     json: webApp,
     svg: "Svg/web-app.svg",
   },
   {
     id: "ui-ux",
-    label: "UX/UI Design",
+    label: "Electrical Services",
     json: uiUx,
     svg: "Svg/ui-ux.svg",
   },

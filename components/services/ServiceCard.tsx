@@ -2,6 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import Lottie, { AnimationItem } from "lottie-web";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import {
+  ArrowLongLeftIcon,
+  ArrowLongRightIcon,
+} from "@heroicons/react/24/solid";
 export default function ServiceCard({ data, active }: any) {
   const [animation, setAnimation] = useState<AnimationItem | null>(null);
   const container = useRef<HTMLDivElement>(null);
@@ -63,14 +67,22 @@ export default function ServiceCard({ data, active }: any) {
         as="/get-a-quote"
       >
         <article
-          className="grid place-items-center card shadow-lg bg-white  w-[95%] cursor-pointer mb-card"
+          className="grid place-items-center card shadow-lg bg-white relative  h-48 w-[95%] cursor-pointer mb-card"
           onMouseEnter={startAnimation}
           onMouseLeave={stopAnimation}
         >
-          <div ref={container} className="w-40 h-40" />
           <h3 className="text-responsive-2xl text-center capitalize">
             {data?.label ?? ""}
           </h3>
+          {/* <div className="w-40 h-40" /> */}
+
+          <button
+            className="  absolute bottom-3 right-4"
+            type="submit"
+          >
+            {/* <span className="hidden sm:block">Next</span> */}
+            <ArrowLongRightIcon className="w-10 text-accent" />
+          </button>
         </article>
       </Link>
     </>
