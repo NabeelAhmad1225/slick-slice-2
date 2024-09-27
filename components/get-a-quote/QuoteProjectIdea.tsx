@@ -62,7 +62,7 @@ export default function QuoteProjectIdea({
       <form noValidate={true} onSubmit={onclickSubmitForm}>
         <header className="mb-box">
           <h2 className=" text-responsive-2xl">
-            What Service Idea do you have in mind?
+          What kind of services are you looking for?
           </h2>
           <p className="text-error text-responsive-base">{error}</p>
         </header>
