@@ -30,8 +30,8 @@
         await transport.verify();
 
         const sendResult = await transport.sendMail({
-          from: from,
-          to: SMTP_EMAIL,
+          from: SMTP_EMAIL,
+          to: from,
           subject,
           html: body,
         });

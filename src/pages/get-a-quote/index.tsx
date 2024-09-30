@@ -11,12 +11,13 @@ import QuoteServiceType, {
   ProjectServices,
 } from "../../../components/get-a-quote/QuoteServiceType";
 import QuoteStepContent from "../../../components/get-a-quote/QuoteStepContent";
+import Modal from "../../../components/Modal";
 
 // import { compileWelcomeTemplate, sendMail } from "../../lib/mail";
 
 export default function GetAQuote() {
   // Update steps array to exclude "Scope"
-  const steps = ["Services", "Idea", "Information"];
+  const steps = ["Services", "Description", "Information"];
 
   const [currentStep, setCurrentStep] = useState(1);
   const [progress, setProgress] = useState(15);
@@ -54,13 +55,11 @@ export default function GetAQuote() {
     <p><strong>Full Name:</strong> ${clientInfo.full_name}</p>
     <p><strong>Email:</strong> ${clientInfo.email}</p>
     <p><strong>Phone:</strong> ${clientInfo.phone}</p>
-    <p><strong>Country:</strong> ${clientInfo.country}</p>
-    <p><strong>NDA Signed:</strong> ${clientInfo.nda ? "Yes" : "No"}</p>
     <p><strong>Project Description:</strong> ${idea.description}</p>
     <p><strong>Services Requested:</strong> ${services.services.join(", ")}</p>
   `;
 
-  console.log("Emailll" , clientInfo.email , clientInfo)
+    console.log("Emailll", clientInfo.email, clientInfo);
     const data = {
       from: clientInfo.email,
       subject: "Service Request",
@@ -81,8 +80,8 @@ export default function GetAQuote() {
       } else {
         const errorData = await res.json();
         console.log("Failed to send email:", errorData.message);
-        console.log("Response Status:", res.status); // Log the response status
-        console.log("Response Body:", errorData); // Log the entire response body
+        console.log("Response Status:", res.status);
+        console.log("Response Body:", errorData);
       }
     } catch (error) {
       console.log("Error sending email:", error);
@@ -148,8 +147,9 @@ export default function GetAQuote() {
                 currentStep={currentStep}
                 onSubmit={setClientInfo}
                 onNext={(event) => {}}
-                sendEmail={send}
                 onBack={updateProgress}
+                idea={idea}
+                services={services}
               />
               {/* {currentStep === 3 && (
               <div className="w-full flex justify-end mt-10">
