@@ -12,6 +12,8 @@ import QuoteServiceType, {
 } from "../../../components/get-a-quote/QuoteServiceType";
 import QuoteStepContent from "../../../components/get-a-quote/QuoteStepContent";
 
+// import { compileWelcomeTemplate, sendMail } from "../../lib/mail";
+
 export default function GetAQuote() {
   // Update steps array to exclude "Scope"
   const steps = ["Services", "Idea", "Information"];
@@ -40,30 +42,29 @@ export default function GetAQuote() {
     console.log({ ...services, ...idea, ...clientInfo });
   }, [services, idea, clientInfo]);
 
-  async function handleSubmit() {
-    if (!clientInfo || !idea || !services) {
+  const send = async () => {
+    console.log("Nabeel");
+    if (!idea || !services || !clientInfo) {
       console.log("Missing information. Please complete all fields.");
       return;
     }
 
-    console.log("Submitting the following data:", {
-      full_name: clientInfo.full_name,
-      email: clientInfo.email,
-      phone: clientInfo.phone,
-      country: clientInfo.country,
-      nda: clientInfo.nda,
-      description: idea.description,
-      services: services.services.join(", "),
-    });
+    const emailBody = `
+    <h3>New Quote Request</h3>
+    <p><strong>Full Name:</strong> ${clientInfo.full_name}</p>
+    <p><strong>Email:</strong> ${clientInfo.email}</p>
+    <p><strong>Phone:</strong> ${clientInfo.phone}</p>
+    <p><strong>Country:</strong> ${clientInfo.country}</p>
+    <p><strong>NDA Signed:</strong> ${clientInfo.nda ? "Yes" : "No"}</p>
+    <p><strong>Project Description:</strong> ${idea.description}</p>
+    <p><strong>Services Requested:</strong> ${services.services.join(", ")}</p>
+  `;
 
+  console.log("Emailll" , clientInfo.email , clientInfo)
     const data = {
-      full_name: clientInfo.full_name || "",
-      email: clientInfo.email || "",
-      phone: clientInfo.phone || "",
-      country: clientInfo.country || "",
-      nda: clientInfo.nda || false,
-      description: idea.description || "",
-      services: services.services.join(", ") || "",
+      from: clientInfo.email,
+      subject: "Service Request",
+      body: emailBody,
     };
 
     try {
@@ -78,12 +79,15 @@ export default function GetAQuote() {
       if (res.ok) {
         console.log("Email sent successfully");
       } else {
-        console.error("Failed to send email");
+        const errorData = await res.json();
+        console.log("Failed to send email:", errorData.message);
+        console.log("Response Status:", res.status); // Log the response status
+        console.log("Response Body:", errorData); // Log the entire response body
       }
     } catch (error) {
-      console.error("Error sending email", error);
+      console.log("Error sending email:", error);
     }
-  }
+  };
 
   return (
     <>
@@ -144,9 +148,20 @@ export default function GetAQuote() {
                 currentStep={currentStep}
                 onSubmit={setClientInfo}
                 onNext={(event) => {}}
-                sendEmail={handleSubmit}
+                sendEmail={send}
                 onBack={updateProgress}
               />
+              {/* {currentStep === 3 && (
+              <div className="w-full flex justify-end mt-10">
+                <button
+                  className="btn btn-primary"
+                  type="submit"
+                  onClick={send}
+                >
+                  Submit
+                </button>
+              </div>
+            )} */}
             </QuoteStepContent>
           </div>
         </section>

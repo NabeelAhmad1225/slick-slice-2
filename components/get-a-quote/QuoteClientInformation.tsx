@@ -13,7 +13,7 @@ export interface ClientInformation {
 
 interface Props extends QuoteStepContentForm {
   onSubmit: (body: ClientInformation | null) => void;
-  sendEmail: () => Promise<void>; // Change this to indicate it returns a promise
+  sendEmail: () => Promise<void>; 
 }
 
 export default function QuoteClientInformation({
@@ -127,7 +127,7 @@ export default function QuoteClientInformation({
         checked={nda}
         onChangeBoolean={(event) => setNDA(event)}
       />
-      <div className="md:col-span-2">
+      <div className="md:col-span-2" onClick={sendEmail} >
         <button  className="btn btn-primary" type="submit"> {/* Change to type="submit" */}
           Submit
         </button>
