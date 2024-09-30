@@ -51,7 +51,7 @@ export default function QuoteClientInformation({
     }
 
     const emailBody = `
-      <h3>New Quote Request</h3>
+      <h3>New Service Request</h3>
       <p><strong>Full Name:</strong> ${full_name}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Phone:</strong> ${phone}</p>
