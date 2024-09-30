@@ -108,7 +108,7 @@ export default function QuoteClientInformation({
     <>
       <form
         noValidate={true}
-        className="grid gap-card md:grid-cols-2"
+        className="grid gap-card "
         onSubmit={send} // Call onclickSubmitForm on submit
       >
         <header className="-mb-2">
@@ -157,13 +157,13 @@ export default function QuoteClientInformation({
         </div>
       </form>
 
-      {modalVisible && (
-        <Modal
-          message="Email sent successfully!"
-          onClose={closeModal}
-          visible={modalVisible}
-        />
-      )}
+
+      <Modal 
+        isVisible={modalVisible} 
+        onClose={closeModal} 
+        title="Success!" 
+        message="Your email has been sent successfully."
+      />
     </>
   );
 }

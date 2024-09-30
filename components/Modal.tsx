@@ -1,16 +1,25 @@
-import React from 'react';
+// Modal.tsx
+import React from "react";
 
 interface ModalProps {
-  message: string;
+  isVisible: boolean;
   onClose: () => void;
-  visible: boolean; // Added prop to control visibility
+  title: string;
+  message: string;
 }
 
-const Modal: React.FC<ModalProps> = ({ message, onClose, visible }) => {
+const Modal: React.FC<ModalProps> = ({
+  isVisible,
+  onClose,
+  title,
+  message,
+}) => {
+  if (!isVisible) return null;
+
   return (
-    <div className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ${visible ? 'modal-show' : 'modal'}`}>
-      <div className="bg-white p-5 rounded shadow-md">
-        <h3 className="text-lg font-semibold">Success</h3>
+    <div className=" inset-0 flex items-center justify-center bg-transparent bg-opacity-50">
+      <div className="bg-white p-5 rounded shadow-2xl">
+        <h2 className="text-lg font-semibold">{title}</h2>
         <p>{message}</p>
         <button className="mt-4 btn btn-primary" onClick={onClose}>
           Close
