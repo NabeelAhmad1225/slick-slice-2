@@ -38,35 +38,113 @@ import mobileApp from "../public/icons/mobile-app.json";
 // ];
 
 
-export const services = [
+// export const services = [
+//   {
+//     id: "it-services",
+//     label: "IT Services",
+//     json: mobileApp,
+//     svg: "Svg/mobile-app.svg",
+//   },
+//   {
+//     id: "cleaning-services",
+//     label: "Cleaning Services ",
+//     json: wordpress,
+//     svg: "Svg/e-commerce.svg",
+//   },
+//   {
+//     id: "plumbing-services",
+//     label: "Plumbing Services",
+//     json: webApp,
+//     svg: "Svg/web-app.svg",
+//   },
+//   {
+//     id: "electrical-services",
+//     label: "Electrical Services",
+//     json: uiUx,
+//     svg: "Svg/ui-ux.svg",
+//   },
+//   // {
+//   //   id: "api-solutions",
+//   //   label: "API Solutions",
+//   //   json: apiSolutions,
+//   //   // svg: "Svg/api-solutions.svg",
+//   // },
+// ];
+
+
+
+export const services =  [
   {
-    id: "it-services",
-    label: "IT Services",
-    json: mobileApp,
-    svg: "Svg/mobile-app.svg",
+    "id": "digital-marketing",
+    "label": "Digital Marketing",
+    "description": "We help businesses succeed online through custom digital marketing strategies designed to increase engagement and drive growth.",
+    "nestedServices": [
+      "Search Engine Optimization (SEO)",
+      "Social Media Management",
+      "Pay-Per-Click (PPC) Advertising",
+      "Content Marketing",
+      "Email Marketing",
+      "Website Design & Development"
+    ],
+    "svg": "Svg/digital-marketing.svg"
   },
   {
-    id: "cleaning-services",
-    label: "Cleaning Services ",
-    json: wordpress,
-    svg: "Svg/e-commerce.svg",
+    "id": "it-services",
+    "label": "IT Services",
+    "description": "Providing technical solutions for businesses to enhance their operations.",
+    "nestedServices": [
+      "Cloud Computing",
+      "Cybersecurity",
+      "Technical Support"
+    ],
+    "svg": "Svg/it-services.svg"
   },
   {
-    id: "plumbing-services",
-    label: "Plumbing Services",
-    json: webApp,
-    svg: "Svg/web-app.svg",
+    "id": "cleaning-services",
+    "label": "Cleaning Services",
+    "description": "Expert cleaning services tailored to meet your needs.",
+    "nestedServices": [
+      "Residential Cleaning",
+      "Commercial Cleaning",
+      "Post-Construction Cleaning",
+      "Window Cleaning"
+    ],
+    "svg": "Svg/cleaning-services.svg"
   },
   {
-    id: "electrical-services",
-    label: "Electrical Services",
-    json: uiUx,
-    svg: "Svg/ui-ux.svg",
+    "id": "plumbing-services",
+    "label": "Plumbing Services",
+    "description": "Professional plumbing services for all your needs.",
+    "nestedServices": [
+      "Leak Repair",
+      "Drain Cleaning",
+      "Water Heater Installation",
+      "Emergency Plumbing"
+    ],
+    "svg": "Svg/plumbing-services.svg"
   },
-  // {
-  //   id: "api-solutions",
-  //   label: "API Solutions",
-  //   json: apiSolutions,
-  //   // svg: "Svg/api-solutions.svg",
-  // },
-];
+  {
+    "id": "electrical-services",
+    "label": "Electrical Services",
+    "description": "Reliable electrical solutions for residential and commercial properties.",
+    "nestedServices": [
+      "Electrical Repair",
+      "Installation of Fixtures",
+      "Circuit Breaker Replacement",
+      "Wiring Upgrades"
+    ],
+    "svg": "Svg/electrical-services.svg"
+  },
+  {
+    "id": "api-solutions",
+    "label": "API Solutions",
+    "description": "Custom API development for seamless integration and data sharing.",
+    "nestedServices": [
+      "REST API Development",
+      "GraphQL API Development",
+      "API Integration Services",
+      "API Security Auditing"
+    ],
+    "svg": "Svg/api-solutions.svg"
+  }
+]

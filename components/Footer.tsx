@@ -56,7 +56,7 @@ export default function Footer() {
               </li>
               <li className="flex gap-4 text-white text-responsive-base">
                 <SvgWhatsappIcon />
-                {contact.phone}
+                {contact.whatsapp_number}
               </li>
               <li className="flex gap-4 text-white text-responsive-base">
                 <EnvelopeIcon className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 text-accent" />

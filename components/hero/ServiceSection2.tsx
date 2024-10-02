@@ -27,13 +27,35 @@ export default function ServiceSection2() {
     },
   };
 
+  const [expandedServiceID, setExpandedServiceID] = useState<number | null>(
+    null
+  );
+
+  const handleCardClick = (serviceID: number) => {
+    setExpandedServiceID(serviceID === expandedServiceID ? null : serviceID);
+  };
   const serviceCarousel = services.map((service: any, index: number) => {
     return (
       <div key={index}>
-        <ServiceCard data={service} active={activeServiceID == service.id} />
+        <ServiceCard
+          data={service}
+          active={activeServiceID === service.id}
+          onClick={() => handleCardClick(service.id)} // Handle click to expand or collapse
+        />
+        {/* Show nested services if the service is expanded */}
+        {expandedServiceID === service.id && service.nestedServices && (
+          <div className="nested-services">
+            <ul>
+              {service.nestedServices.map((nestedService: any, idx: number) => (
+                <li key={idx}>{nestedService}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     );
   });
+  
   const CustomDot = ({ onMove, index, onClick, active }: any) => {
     return (
       <li onClick={() => onClick(setActiveServiceID(services[index].id))}>
