@@ -40,6 +40,9 @@ export default function NavBar() {
       case "/jobs":
         setDefaultBackgroundCSS(styles.whiteBackground);
         break;
+      // case "/aboutUs":
+      //   setDefaultBackgroundCSS(styles.whiteBackground);  
+      //   break;
       default:
         setDefaultBackgroundCSS(styles.primaryBackground);
         break;

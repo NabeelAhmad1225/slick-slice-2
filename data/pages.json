@@ -11,5 +11,9 @@
   {
     "href": "/jobs",
     "label": "Jobs"
+  },
+  {
+    "href": "/aboutUs",
+    "label": "About Us"
   }
 ]
