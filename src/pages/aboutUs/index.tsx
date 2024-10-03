@@ -90,7 +90,6 @@ export default function AboutUs() {
         />
       </div>
       <div className="wrapper pb-32 px-4 md:px-8 lg:px-16 mt-44">
-        {/* Services Section */}
         <section className="container-fluid">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-semibold text-gray-800 mb-6">
             Our Services
