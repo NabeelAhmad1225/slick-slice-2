@@ -112,6 +112,21 @@ export const services =  [
     "svg": "Svg/cleaning-services.svg"
   },
   {
+    "id": "construction-labor-services",
+    "label": "Construction Labor Services",
+    "description": "Experienced and hardworking professionals to support a wide range of construction needs.",
+    "nestedServices": [
+      "General Labor for Construction Projects",
+      "Demolition & Site Preparation",
+      "Framing & Carpentry",
+      "Concrete Pouring & Finishing",
+      "Drywall Installation & Finishing",
+      "Painting & Finishing Touches",
+      "Landscaping & Hardscaping"
+    ],
+    "svg": "Svg/construction-labor-services.svg"
+  },
+  {
     "id": "plumbing-services",
     "label": "Plumbing Services",
     "description": "Professional plumbing services for all your needs.",
@@ -135,16 +150,6 @@ export const services =  [
     ],
     "svg": "Svg/electrical-services.svg"
   },
-  {
-    "id": "api-solutions",
-    "label": "API Solutions",
-    "description": "Custom API development for seamless integration and data sharing.",
-    "nestedServices": [
-      "REST API Development",
-      "GraphQL API Development",
-      "API Integration Services",
-      "API Security Auditing"
-    ],
-    "svg": "Svg/api-solutions.svg"
-  }
+
+  
 ]
