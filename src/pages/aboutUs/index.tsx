@@ -112,6 +112,27 @@ export default function AboutUs() {
               <li>Specialized Disinfection Services</li>
             </ul>
           </div>
+
+          <div className="mt-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-2">
+              Construction Labor Services
+            </h3>
+            <p className="text-lg md:text-xl text-gray-700 mb-4">
+              When it comes to construction projects, having a reliable team of
+              skilled laborers is crucial. At Slick Slice we provide experienced
+              and hardworking professionals to support a wide range of
+              construction needs. Our construction labor
+            </p>
+            <ul className="list-disc list-inside text-base md:text-lg text-gray-600 space-y-2">
+              <li>General Labor for Construction Projects</li>
+              <li>Demolition & Site Preparation</li>
+              <li>Framing & Carpentry</li>
+              <li>Concrete Pouring & Finishing</li>
+              <li>Drywall Installation & Finishing</li>
+              <li>Painting & Finishing Touches</li>
+              <li>Landscaping & Hardscaping</li>
+            </ul>
+          </div>
         </section>
 
         {/* Why Choose Us Section */}
