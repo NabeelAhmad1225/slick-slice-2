@@ -14,7 +14,6 @@ export interface ClientInformation {
 
 interface Props extends QuoteStepContentForm {
   onSubmit: (body: ClientInformation | null) => void;
-  idea: ProjectIdea | null;
   services: ProjectServices | null;
 }
 
@@ -23,7 +22,6 @@ export default function QuoteClientInformation({
   onNext,
   currentStep,
   step,
-  idea,
   services,
 }: Props) {
   const [full_name, setFullName] = useState("");
@@ -44,7 +42,7 @@ export default function QuoteClientInformation({
     event.preventDefault();
     setLoading(true);
 
-    if (!idea || !services || !full_name || !email || !phone) {
+    if (!services || !full_name || !email || !phone) {
       console.log("Missing information. Please complete all fields.");
       setLoading(false);
       return;
@@ -55,7 +53,6 @@ export default function QuoteClientInformation({
       <p><strong>Full Name:</strong> ${full_name}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Project Description:</strong> ${idea.description}</p>
       <p><strong>Services Requested:</strong> ${services.services.join(
         ", "
       )}</p>

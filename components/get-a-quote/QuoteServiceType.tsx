@@ -1,9 +1,9 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { services } from "../../data/services.js";
 import QuoteStepActions from "./QuoteStepActions";
 import { QuoteStepContentForm } from "./QuoteStepContent";
 import { sendError } from "next/dist/server/api-utils";
-// import ServiceCard from "../services/ServiceCard.jsx";
+
 import { useRouter } from "next/router";
 export interface ProjectServices {
   services: string[];
@@ -20,10 +20,24 @@ export default function QuoteServiceType({
   step,
 }: Props) {
   const router = useRouter();
-  let query = (router?.query?.selectedService ?? "").toString();
+  const { id } = router.query;
 
-  const [selectServices, setSelectedServices] = useState<string[]>([query]);
+  const [selectServices, setSelectedServices] = useState<string[]>([]);
   const [error, setError] = useState("");
+
+  const [currentService, setCurrentService] = useState<any | null>(null);
+
+  useEffect(() => {
+    if (id) {
+      const service = services.find((service) => service.id === id);
+
+      if (service) {
+        setCurrentService(service);
+      }
+    }
+  }, [id]);
+
+  console.log('currentService' , currentService)
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
@@ -55,37 +69,33 @@ export default function QuoteServiceType({
     <>
       <form noValidate={true} onSubmit={onclickSubmitForm}>
         <header className="mb-box ">
-          <h2 className=" text-responsive-2xl">
-            What services would you like?
-          </h2>
+          <strong className=" text-responsive-3xl">
+            {currentService?.label}
+          </strong>
           <p className="text-error text-responsive-base">{error}</p>
         </header>
 
-        <section className="grid grid-auto-col-200 gap-card">
-          {services.map((service) => {
+        <section className="flex w-full justify-center items-center flex-col gap-5 mt-10">
+          {/* Display the nested services if the current service is found */}
+          {currentService?.nestedServices?.map((nestedService: string, index: number) => {
             return (
-              <article key={service.id} className="">
+              <article key={index} className="  sm:w-[750px] w-72 ">
                 <input
                   type="checkbox"
                   name="services"
-                  id={service.id}
-                  value={service.id}
-                  checked={selectServices.includes(service.id)}
+                  id={nestedService}
+                  value={nestedService}
+                  checked={selectServices.includes(nestedService)}
                   onChange={handleOnChange}
                   className="hidden peer"
                 />
 
                 <label
-                  htmlFor={service.id}
-                  className="grid place-items-center rounded-md border-2 border-[#adb2c055] card peer-[.hidden]:peer-checked:bg-[#49c2fa1c] peer-[.hidden]:peer-checked:border-accent-2 cursor-pointer transition-all duration-500 ease-in-out hover:scale-105"
+                  htmlFor={nestedService}
+                  className="grid place-items-center rounded-md border-2 border-[#adb2c055]  card peer-[.hidden]:peer-checked:bg-[#49c2fa1c] peer-[.hidden]:peer-checked:border-accent-2 cursor-pointer transition-all duration-500 ease-in-out hover:scale-105"
                 >
-                  {/* <img
-                    src={service.svg}
-                    alt={service.label}
-                    className="w-20 h-auto "
-                  /> */}
-                  <span className="font-body text-body text-responsive-base  capitalize">
-                    {service.label}
+                  <span className="font-body text-body sm:text-responsive-xl text-responsive-base  capitalize">
+                    {nestedService}
                   </span>
                 </label>
               </article>
@@ -93,7 +103,7 @@ export default function QuoteServiceType({
           })}
         </section>
 
-        <QuoteStepActions noBack isActive={currentStep == step} />
+        <QuoteStepActions noBack isActive={currentStep === step} />
       </form>
     </>
   );

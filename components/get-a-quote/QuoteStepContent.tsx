@@ -17,7 +17,7 @@ export default function QuoteStepContent({ children, isActive }: Props) {
     <>
       <section className="w-full flex-shrink-0 p-2 pt-card sm:card">
         <article
-          className={`card style-card bg-white w-full h-fit transition-all duration-1000 ease-out ${
+          className={`card style-card bg-white w-full h-fit  transition-all duration-1000 ease-out ${
             isActive ? "opacity-100 " : "opacity-0 pointer-events-none "
           }`}
         >

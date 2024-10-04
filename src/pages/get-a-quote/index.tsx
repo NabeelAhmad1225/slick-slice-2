@@ -11,16 +11,18 @@ import QuoteServiceType, {
   ProjectServices,
 } from "../../../components/get-a-quote/QuoteServiceType";
 import QuoteStepContent from "../../../components/get-a-quote/QuoteStepContent";
-import Modal from "../../../components/Modal";
-
-// import { compileWelcomeTemplate, sendMail } from "../../lib/mail";
+import { useRouter } from "next/router";
 
 export default function GetAQuote() {
-  // Update steps array to exclude "Scope"
-  const steps = ["Services", "Description", "Information"];
+  const steps = ["Services", "Information"];
+
+  const router = useRouter();
+  const { id } = router.query;
+
+  console.log("idddd", id);
 
   const [currentStep, setCurrentStep] = useState(1);
-  const [progress, setProgress] = useState(15);
+  const [progress, setProgress] = useState(50);
   const [translateX, setTranslateX] = useState({
     transform: "translateX(0%)",
   });
@@ -36,57 +38,11 @@ export default function GetAQuote() {
   }
 
   const [services, setServices] = useState<null | ProjectServices>(null);
-  const [idea, setIdea] = useState<null | ProjectIdea>(null);
   const [clientInfo, setClientInfo] = useState<null | ClientInformation>(null);
 
   useEffect(() => {
-    console.log({ ...services, ...idea, ...clientInfo });
-  }, [services, idea, clientInfo]);
-
-  const send = async () => {
-    console.log("Nabeel");
-    if (!idea || !services || !clientInfo) {
-      console.log("Missing information. Please complete all fields.");
-      return;
-    }
-
-    const emailBody = `
-    <h3>New Quote Request</h3>
-    <p><strong>Full Name:</strong> ${clientInfo.full_name}</p>
-    <p><strong>Email:</strong> ${clientInfo.email}</p>
-    <p><strong>Phone:</strong> ${clientInfo.phone}</p>
-    <p><strong>Project Description:</strong> ${idea.description}</p>
-    <p><strong>Services Requested:</strong> ${services.services.join(", ")}</p>
-  `;
-
-    console.log("Emailll", clientInfo.email, clientInfo);
-    const data = {
-      from: clientInfo.email,
-      subject: "Service Request",
-      body: emailBody,
-    };
-
-    try {
-      const res = await fetch("/api/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (res.ok) {
-        console.log("Email sent successfully");
-      } else {
-        const errorData = await res.json();
-        console.log("Failed to send email:", errorData.message);
-        console.log("Response Status:", res.status);
-        console.log("Response Body:", errorData);
-      }
-    } catch (error) {
-      console.log("Error sending email:", error);
-    }
-  };
+    console.log({ ...services, ...clientInfo });
+  }, [services, clientInfo]);
 
   return (
     <>
@@ -94,7 +50,7 @@ export default function GetAQuote() {
         <title> Get A Quote - Slick Slice </title>
       </Head>
 
-      <div className="wrapper container-fluid mt-card mb-card">
+      {/* <div className="wrapper container-fluid mt-card mb-card">
         <section className="relative w-full mx-auto flex gap-card justify-evenly max-w-screen-lg">
           <progress
             value={progress}
@@ -114,10 +70,10 @@ export default function GetAQuote() {
             );
           })}
         </section>
-      </div>
+      </div> */}
 
-      <div className="wrapper w-screen overflow-hidden">
-        <section className="screen container w-screen h-fit overflow-x-hidden ">
+      <div className="wrapper w-screen ">
+        <section className=" container-fluid  w-screen h-fit ">
           <div
             className="slider w-full flex transition-all duration-500 ease-in-out"
             style={translateX}
@@ -132,39 +88,15 @@ export default function GetAQuote() {
             </QuoteStepContent>
 
             <QuoteStepContent isActive={currentStep == 2}>
-              <QuoteProjectIdea
-                step={2}
-                currentStep={currentStep}
-                onSubmit={setIdea}
-                onNext={updateProgress}
-                onBack={updateProgress}
-              />
-            </QuoteStepContent>
-
-            <QuoteStepContent isActive={currentStep == 3}>
               <QuoteClientInformation
                 step={3}
                 currentStep={currentStep}
                 onSubmit={setClientInfo}
                 onNext={(event) => {}}
                 onBack={updateProgress}
-                idea={idea}
                 services={services}
               />
-              {/* {currentStep === 3 && (
-              <div className="w-full flex justify-end mt-10">
-                <button
-                  className="btn btn-primary"
-                  type="submit"
-                  onClick={send}
-                >
-                  Submit
-                </button>
-              </div>
-            )} */}
             </QuoteStepContent>
-
-            
           </div>
         </section>
       </div>

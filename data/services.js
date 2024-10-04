@@ -116,7 +116,7 @@ export const services =  [
     "label": "Construction Labor Services",
     "description": "Experienced and hardworking professionals to support a wide range of construction needs.",
     "nestedServices": [
-      "General Labor for Construction Projects",
+      "General Labor for Construction",
       "Demolition & Site Preparation",
       "Framing & Carpentry",
       "Concrete Pouring & Finishing",

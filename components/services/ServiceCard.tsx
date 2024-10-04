@@ -53,23 +53,21 @@ export default function ServiceCard({ data, active }: any) {
     // console.log("else :>> ", active);
   }
   const router = useRouter();
-  // function goToQuote() {
-  //   router.push({
-  //     pathname: "/get-a-quote",
-  //     query: { id: data.id },
-  //   });
-  // }
+  function goToQuote() {
+    router.push({
+      pathname: "/get-a-quote",
+      query: { id: data.id },
+    });
+  }
 
   return (
     <>
-      <Link
-        href={`/get-a-quote?selectedService=${data.id}&previous=${router.asPath}`}
-        as="/get-a-quote"
-      >
+    
         <article
           className="grid place-items-center card shadow-lg bg-white relative  h-48 w-[95%] cursor-pointer mb-card"
           onMouseEnter={startAnimation}
           onMouseLeave={stopAnimation}
+          onClick={goToQuote}
         >
           <h3 className="text-responsive-2xl text-center capitalize">
             {data?.label ?? ""}
@@ -84,7 +82,7 @@ export default function ServiceCard({ data, active }: any) {
             <ArrowLongRightIcon className="w-10 text-accent" />
           </button>
         </article>
-      </Link>
+      {/* </Link> */}
     </>
   );
 }
