@@ -5,6 +5,7 @@ import { QuoteStepContentForm } from "./QuoteStepContent";
 import { ProjectIdea } from "./QuoteProjectIdea";
 import { ProjectServices } from "./QuoteServiceType";
 import Modal from "../../components/Modal";
+import QuoteStepActions from "./QuoteStepActions";
 
 export interface ClientInformation {
   full_name: string;
@@ -23,6 +24,7 @@ export default function QuoteClientInformation({
   currentStep,
   step,
   services,
+  onBack,
 }: Props) {
   const [full_name, setFullName] = useState("");
   const regexFullName = /^[\p{L}\s'\-\u0100-\uFFFF]+$/;
@@ -103,11 +105,7 @@ export default function QuoteClientInformation({
 
   return (
     <>
-      <form
-        noValidate={true}
-        className="grid gap-card "
-        onSubmit={send} // Call onclickSubmitForm on submit
-      >
+      <form noValidate={true} className="grid gap-card " onSubmit={send}>
         <header className="-mb-2">
           <h2 className="text-responsive-2xl">Tell us about yourself </h2>
           <p className="text-error text-responsive-base">{error}</p>
@@ -146,19 +144,22 @@ export default function QuoteClientInformation({
           pattern={regexPhone}
           onChange={(event: any) => setPhone(event.target.value)}
         />
-
-        <div className="md:col-span-2">
-          <button className="btn btn-primary" type="submit" disabled={loading}>
-            {loading ? <span className="loader" /> : "Submit"}
-          </button>
-        </div>
       </form>
+      <div className="w-full flex justify-between items-center mt-10">
+        <QuoteStepActions
+          isActive={currentStep == step}
+          onBack={() => onBack && onBack(step - 1)}
+          finalBtnText="nadd"
+        />
+        <button className="btn btn-primary" type="submit" onClick={send}  disabled={loading}>
+          {loading ? <span className="loader" /> : "Submit"}
+        </button>
+      </div>
 
-
-      <Modal 
-        isVisible={modalVisible} 
-        onClose={closeModal} 
-        title="Success!" 
+      <Modal
+        isVisible={modalVisible}
+        onClose={closeModal}
+        title="Success!"
         message="Your email has been sent successfully."
       />
     </>

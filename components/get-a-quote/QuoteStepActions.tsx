@@ -34,9 +34,7 @@ export default function QuoteStepActions({
           </button>
         )}
         {finalBtnText ? (
-          <button className="btn btn-primary" type="submit">
-            {finalBtnText}
-          </button>
+          <p></p>
         ) : (
           <button
             className="btn btn-primary btn-icon-only sm:btn-md"

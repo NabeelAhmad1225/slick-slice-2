@@ -89,7 +89,7 @@ export default function GetAQuote() {
 
             <QuoteStepContent isActive={currentStep == 2}>
               <QuoteClientInformation
-                step={3}
+                step={2}
                 currentStep={currentStep}
                 onSubmit={setClientInfo}
                 onNext={(event) => {}}

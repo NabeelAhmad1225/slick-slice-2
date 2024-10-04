@@ -8,7 +8,7 @@ interface Props {
 export interface QuoteStepContentForm {
   currentStep: number;
   step: number;
-  onBack?: (step: number) => void;
+  onBack?: any,
   onNext: (step: number) => void;
 }
 
