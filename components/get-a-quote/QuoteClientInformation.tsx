@@ -145,7 +145,7 @@ export default function QuoteClientInformation({
           onChange={(event: any) => setPhone(event.target.value)}
         />
       </form>
-      <div className="w-full flex justify-between items-center mt-10 bg-secondary">
+      <div className="w-full flex justify-between items-center mt-10 ">
         <QuoteStepActions
           isActive={currentStep == step}
           onBack={() => onBack && onBack(step - 1)}
