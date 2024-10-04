@@ -145,15 +145,17 @@ export default function QuoteClientInformation({
           onChange={(event: any) => setPhone(event.target.value)}
         />
       </form>
-      <div className="w-full flex justify-between items-center mt-10">
+      <div className="w-full flex justify-between items-center mt-10 bg-secondary">
         <QuoteStepActions
           isActive={currentStep == step}
           onBack={() => onBack && onBack(step - 1)}
           finalBtnText="nadd"
         />
-        <button className="btn btn-primary" type="submit" onClick={send}  disabled={loading}>
-          {loading ? <span className="loader" /> : "Submit"}
-        </button>
+        <form onSubmit={send}>
+          <button className="btn btn-primary mt-3" type="submit" disabled={loading}>
+            {loading ? <span className="loader" /> : "Submit"}
+          </button>
+        </form>
       </div>
 
       <Modal
